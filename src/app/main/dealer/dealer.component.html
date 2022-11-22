@@ -1,0 +1,27 @@
+<ul *ngIf="!toggle">
+  <li *ngFor="let class of classes; let index = index">
+    <div>
+      {{class.name}}
+      <button (click)="sum(index)">+</button>
+      {{class.number}}
+      <button (click)="sub(index)">-</button>
+      <button (click)="delete(index)">x</button>
+    </div>
+  </li>
+</ul>
+
+<div *ngIf="!toggle">
+  <input type="text" placeholder="Write a new class here..." [(ngModel)]="newClass">
+  <button (click)="addClass(newClass)">&#8194;Add class&#8194;</button>
+  <button (click)="mix()">&#8194;Start dealing&#8194;</button>
+</div>
+
+
+<ul *ngIf="toggle">
+  <li>
+      {{newClasses[order]}}
+      <button (click)="sumO()">+</button>
+  </li>
+</ul>
+
+
